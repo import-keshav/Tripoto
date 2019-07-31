@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<h1>Hotels in {{place}}</h1>
+
+	{% for hotel in hotels %}
+		<div style="border-width: 2px; border-color: black; border-style: solid; width: 300px;" >
+			<div style="width: 300px; height: 150px">
+				<img src="{{hotel.image.url}}" style="width: 100%; height: 100%">
+			</div>
+			<center>
+				<p>{{hotel.city}}</p><br>
+			</center>
+			<b>{{hotel.name}}</b>
+			<p><b>&#x20B9;</b>{{hotel.price}} <span style="color: red">PER NIGHT FOR TWO</span></p>
+		</div>
+		<br>
+	{% endfor %}
+</body>
+</html>
