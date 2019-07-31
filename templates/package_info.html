@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+	<div style="width: 700px; height: 350px">
+		<img src="{{dest_info.image_url}}" style="width: 100%; height: 100%;">
+	</div>
+	<h3>{{dest_info.name}}</h3>
+	<p><b>Hotel :  </b>{{dest_info.hotel_name}}</p>
+
+	<div>
+		<p><b>Inclusions:</b></p>
+		<p>
+			{% for item, value in dest_info.services.items %}
+				{% if value == 'True' %}
+					<span>{{ item }}</span>
+				{% endif %}
+			{% endfor %}
+		</p>
+	</div>
+
+	<div>
+		<p><b>Exclusions :</b></p>
+		<p>
+			{% for item, value in dest_info.services.items %}
+				{% if value == 'False' %}
+					<span>{{ item }}</span>
+				{% endif %}
+			{% endfor %}
+		</p>
+	</div>
+
+	<div>
+		<b>&#x20B9;{{ dest_info.price }}</b>   per person
+	</div>
+
+	<div>
+		<p>{{ dest_info.desc }}</p>
+	</div>
+
+</body>
+</html>
